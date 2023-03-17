@@ -1,6 +1,10 @@
 from PyQt5 import uic
 
-DialogUi, DialogType = uic.loadUiType('D:/Local/Documentos/Elias/Cursos/Qgis/qt/dialog.ui')
+project = QgsProject.instance()
+projectPath = project.absolutePath()
+dialogFilePath = projectPath + '/qt/dialog.ui'
+
+DialogUi, DialogType = uic.loadUiType(dialogFilePath)
 
 class MyDialog(DialogType, DialogUi):
     def __init__(self):
